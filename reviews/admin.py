@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django_summernote.admin import SummernoteModelAdmin
-from .models import Book, Comment
+from .models import Book, Reviewed
 
 @admin.register(Book)
 class ReviewAdmin(SummernoteModelAdmin):
@@ -12,4 +12,4 @@ class ReviewAdmin(SummernoteModelAdmin):
     summernote_fields = ('blurb',)
 
 # Register your models here.
-admin.site.register(Comment)
+admin.site.register(Reviewed)

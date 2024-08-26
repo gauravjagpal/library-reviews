@@ -12,9 +12,9 @@ class Book(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     
 
-class Comment(models.Model):
+class Reviewed(models.Model):
     book = models.ForeignKey(
-        Book, on_delete=models.CASCADE, related_name="comments")
+        Book, on_delete=models.CASCADE, related_name="reviewed")
     author = models.CharField(max_length=200, unique=True)
     body = models.TextField()
     approved = models.BooleanField(default=False)
