@@ -5,7 +5,7 @@ from .models import Book, Reviewed
 @admin.register(Book)
 class ReviewAdmin(SummernoteModelAdmin):
 
-    list_display = ('title', 'slug', 'status')
+    list_display = ('title', 'author', 'status')
     search_fields = ['title', 'blurb']
     list_filter = ('status',)
     prepopulated_fields = {'slug': ('title',)}
