@@ -7,7 +7,7 @@ STATUS = ((0, "Draft"), (1, "Published"))
 class Book(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
-    author = models.CharField(max_length=200, unique=True)
+    author = models.CharField(max_length=200)
     blurb = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     
@@ -15,7 +15,7 @@ class Book(models.Model):
 class Reviewed(models.Model):
     book = models.ForeignKey(
         Book, on_delete=models.CASCADE, related_name="reviewed")
-    author = models.CharField(max_length=200, unique=True)
+    author = models.CharField(max_length=200)
     body = models.TextField()
     approved = models.BooleanField(default=False)
 
