@@ -6,4 +6,5 @@ from .models import Book
 class BookList(generic.ListView):
     model = Book
     queryset = Book.objects.all()
-    template_name = "book_list.html"
+    template_name = "reviews/index.html"
+    paginate_by = 6
