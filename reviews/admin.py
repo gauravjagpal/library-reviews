@@ -6,10 +6,10 @@ from .models import Book, Comment
 class ReviewAdmin(SummernoteModelAdmin):
 
     list_display = ('title', 'slug', 'status')
-    search_fields = ['title', 'content']
+    search_fields = ['title', 'blurb']
     list_filter = ('status',)
     prepopulated_fields = {'slug': ('title',)}
-    summernote_fields = ('content',)
+    summernote_fields = ('blurb',)
 
 # Register your models here.
 admin.site.register(Comment)
