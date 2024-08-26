@@ -8,10 +8,8 @@ class Book(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
     author = models.CharField(max_length=200, unique=True)
-    created_on = models.DateTimeField(auto_now_add=True)
-    status = models.IntegerField(choices=STATUS, default=0)
     blurb = models.TextField(blank=True)
-    updated_on = models.DateTimeField(auto_now=True)
+    status = models.IntegerField(choices=STATUS, default=0)
     
 
 class Comment(models.Model):
@@ -20,7 +18,6 @@ class Comment(models.Model):
     author = models.CharField(max_length=200, unique=True)
     body = models.TextField()
     approved = models.BooleanField(default=False)
-    created_on = models.DateTimeField(auto_now_add=True)
     class Meta:
         ordering = ["created_on"]
 
