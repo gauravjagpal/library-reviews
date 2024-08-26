@@ -18,8 +18,6 @@ class Reviewed(models.Model):
     author = models.CharField(max_length=200, unique=True)
     body = models.TextField()
     approved = models.BooleanField(default=False)
-    class Meta:
-        ordering = ["created_on"]
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
