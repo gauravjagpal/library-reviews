@@ -1,0 +1,36 @@
+{% extends 'base.html' %} {% block content %}
+{% load static %}
+
+<div class="masthead">
+    <div class="container">
+        <div class="row g-0">
+            <div class="col-md-6 masthead-text">
+                <!-- Book title goes in these h1 tags -->
+                <h1 class="book-title">{{ book.title }}</h1>
+                <!-- Book author goes before the | the book's created date goes after -->
+                <p class="book-subtitle">{{ book.author }} | {{ book.created_on }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="d-none d-md-block col-md-6 masthead-image">
+                <img src="{% static 'images/harry-potter-and-the-philosophers-stone.jpg' %}" class="scale" alt="placeholder">
+            </div>
+        </div>
+        <div class="col card mb-4  mt-3 left  top">
+            <div class="card-body">
+                <!-- The book content goes inside the card-text. -->
+                <!-- Use the | safe filter inside the template tags -->
+                <p class="card-text">
+                    {{ book.content | safe }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}
