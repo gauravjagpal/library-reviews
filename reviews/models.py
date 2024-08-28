@@ -14,10 +14,11 @@ class Book(models.Model):
 
 class Reviewed(models.Model):
     book = models.ForeignKey(
-        Book, on_delete=models.CASCADE, related_name="reviewed")
+        Book, on_delete=models.CASCADE, related_name="reviews")
     author = models.CharField(max_length=200)
     body = models.TextField()
     approved = models.BooleanField(default=False)
+    book_id = 1
 
     def __str__(self):
         return f"Comment {self.body} by {self.author}"
