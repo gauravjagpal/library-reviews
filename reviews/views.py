@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, reverse
 from django.views import generic
 from django.contrib import messages
-from .models import Book
+from django.http import HttpResponseRedirect
+from .models import Book, Reviewed
 from .forms import ReviewForm
 
 # Create your views here.
@@ -55,3 +56,42 @@ def book_details(request, slug):
             "review_form": review_form,
         },
     )
+
+
+def review_edit(request, slug, review_id):
+    """
+    view to edit reviews
+    """
+    if request.method == "POST":
+
+        queryset = Book.objects.filter(status=1)
+        book = get_object_or_404(queryset, slug=slug)
+        review = get_object_or_404(Reviewed, pk=review_id)
+        review_form = ReviewForm(data=request.POST, instance=review)
+
+        if review.is_valid() and review.author == request.user:
+            review = review_form.save(commit=False)
+            review.book = book
+            review.approved = False
+            review.save()
+            messages.add_message(request, messages.SUCCESS, 'Review Updated!')
+        else:
+            messages.add_message(request, messages.ERROR, 'Error updating review!')
+
+    return HttpResponseRedirect(reverse('book_details', args=[slug]))
+
+def review_delete(request, slug, review_id):
+    """
+    view to delete review
+    """
+    queryset = Book.objects.filter(status=1)
+    book = get_object_or_404(queryset, slug=slug)
+    review = get_object_or_404(Reviewed, pk=review_id)
+
+    if review.author == request.user:
+        review.delete()
+        messages.add_message(request, messages.SUCCESS, 'Review deleted!')
+    else:
+        messages.add_message(request, messages.ERROR, 'You can only delete your own review!')
+
+    return HttpResponseRedirect(reverse('book_details', args=[slug]))

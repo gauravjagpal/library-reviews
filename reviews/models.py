@@ -15,7 +15,9 @@ class Book(models.Model):
 class Reviewed(models.Model):
     book = models.ForeignKey(
         Book, on_delete=models.CASCADE, related_name="reviews")
-    author = models.CharField(max_length=200)
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="book_details"
+        )
     body = models.TextField()
     approved = models.BooleanField(default=False)
 
