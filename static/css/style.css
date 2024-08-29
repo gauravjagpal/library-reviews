@@ -1,3 +1,15 @@
+.navbar {
+    background-color: #091F5B !important;
+}
+
+.nav-link {
+    color:white
+}
+
+#logo {
+    max-width: 150px;
+}
+
 body {
     background-color: #F9FAFC;
 }
@@ -36,6 +48,10 @@ body {
 
 .image-container {
     position: relative;
+}
+
+#book-logo > img {
+    max-width: 10px;
 }
 
 .image-flash {

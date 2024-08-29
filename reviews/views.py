@@ -8,7 +8,7 @@ from .forms import ReviewForm
 # Create your views here.
 class BookList(generic.ListView):
     model = Book
-    queryset = Book.objects.all()
+    queryset = Book.objects.all().order_by("id")
     template_name = "reviews/index.html"
     paginate_by = 6
 
