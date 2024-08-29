@@ -18,7 +18,6 @@ class Reviewed(models.Model):
     author = models.CharField(max_length=200)
     body = models.TextField()
     approved = models.BooleanField(default=False)
-    book_id = 1
 
     def __str__(self):
-        return f"Comment {self.body} by {self.author}"
+        return f"Review {self.body} by {self.author}"

@@ -30,6 +30,7 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
+    '8000-gauravjagpa-libraryrevi-cyb4me1gpzz.ws-eu115.gitpod.io',
     'localhost',
     '.herokuapp.com'
 ]
@@ -110,7 +111,8 @@ DATABASES = {
 
 CSRF_TRUSTED_ORIGINS = [
     "https://*.codeinstitute-ide.net/",
-    "https://*.herokuapp.com"
+    "https://*.herokuapp.com",
+    'https://*.gitpod.io'
 ]
 
 # Password validation

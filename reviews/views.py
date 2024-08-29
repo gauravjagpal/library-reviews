@@ -35,12 +35,14 @@ def book_details(request, slug):
         if review_form.is_valid():
             reviews = review_form.save(commit=False)
             reviews.author = request.user
-            reviews.post = book
+            reviews.book = book
             reviews.save()
-            reviews.add_message(
-                request, reviews.SUCCESS,
+            messages.add_message(
+                request, messages.SUCCESS,
                 'Review submitted and awaiting approval'
             )
+            # Re-fetch all reviews after saving the new one
+            reviews = book.reviews.all()
     review_form = ReviewForm()
 
     return render(
