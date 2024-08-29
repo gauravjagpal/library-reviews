@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from cloudinary.models import CloudinaryField
 
 # Create your models here.
 
@@ -10,6 +11,7 @@ class Book(models.Model):
     author = models.CharField(max_length=200)
     blurb = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
+    featured_image = CloudinaryField('image', default='placeholder')
     
 
 class Reviewed(models.Model):

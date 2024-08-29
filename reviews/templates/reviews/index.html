@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% load static %}
 
 {% block content %}
 
@@ -15,6 +16,12 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <div class="image-container">
+                                {% if "placeholder" in book.featured_image.url %}
+                                <img class="card-img-top" src="{% static 'images/default.jpg' %}"
+                                    alt="placeholder image">
+                                {% else %}
+                                <img class="card-img-top" src=" {{ book.featured_image.url }}" alt="{{ book.title }}">
+                                {% endif %}
                                 <div class="image-flash">
                                     <p class="author">Author: {{ book.author }}</p>
                                 </div>
@@ -55,5 +62,5 @@
 <!-- index.html content ends here -->
 {% endblock %}
 {% block madeby %}
-    Made by Gaurav Jagpal
+Made by Gaurav Jagpal
 {% endblock %}
