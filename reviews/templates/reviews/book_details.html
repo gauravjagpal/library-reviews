@@ -18,8 +18,11 @@
 <div class="container">
     <div class="row">
         <div class="d-none d-md-block col-md-4">
-            <img src="{% static 'images/harry-potter-and-the-philosophers-stone.jpg' %}" class="scale"
-                alt="placeholder">
+            {% if "placeholder" in book.featured_image.url %}
+            <img class="card-img-top" src="{% static 'images/default.jpg' %}" alt="placeholder image">
+            {% else %}
+            <img class="card-img-top" src=" {{ book.featured_image.url }}" alt="{{ book.title }}">
+            {% endif %}
         </div>
         <div class="col card mb-4  mt-3 left  top">
             <div class="card-body">
