@@ -102,7 +102,7 @@ body {
 }
 
 .masthead {
-    margin-top: 10px;
+    margin: 10px 0;
     overflow: hidden;
     position: relative;
     display: inline-block;
@@ -151,6 +151,10 @@ body {
 .book-subtitle {
     margin-left: 5%;
     color: lightgray;
+}
+
+#book-detail-blurb {
+    margin: auto;
 }
 
 .btn-signup,
