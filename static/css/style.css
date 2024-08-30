@@ -106,7 +106,6 @@ body {
     overflow: hidden;
     position: relative;
     display: inline-block;
-    height: 33vh;
     width: 100%;
 }
 
@@ -146,8 +145,7 @@ body {
 }
 
 .book-title {
-    margin-top: 10%;
-    margin-left: 5%;
+    margin: 5% 0 0 5%;
 }
 
 .book-subtitle {
