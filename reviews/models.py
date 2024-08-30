@@ -12,7 +12,7 @@ class Book(models.Model):
     blurb = models.TextField(blank=True)
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
-    buy_here = models.URLField(max_length=128, blank=True)
+    buy_here = models.URLField(max_length=128, blank=False)
     
 
 class Reviewed(models.Model):
