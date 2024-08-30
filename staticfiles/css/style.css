@@ -18,7 +18,8 @@ body {
     font-family: Lato, sans-serif;
     font-size: 1.4rem;
     font-weight: 700;
-    color: #4A4A4F;
+    color: white;
+    text-decoration: none;
 }
 
 .red-o {
@@ -52,6 +53,19 @@ body {
 
 #book-logo > img {
     max-width: 10px;
+}
+
+#book-thumbnail {
+    max-width: 300px;
+    display: block;
+    margin: auto;
+}
+
+.book-details {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    text-align: center;
 }
 
 .image-flash {

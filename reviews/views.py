@@ -69,7 +69,7 @@ def review_edit(request, slug, review_id):
         review = get_object_or_404(Reviewed, pk=review_id)
         review_form = ReviewForm(data=request.POST, instance=review)
 
-        if review.is_valid() and review.author == request.user:
+        if review_form.is_valid() and review.author == request.user:
             review = review_form.save(commit=False)
             review.book = book
             review.approved = False
