@@ -20,6 +20,7 @@ body {
     font-weight: 700;
     color: white;
     text-decoration: none;
+    padding: 10px;
 }
 
 .red-o {
@@ -45,6 +46,19 @@ body {
 .card {
     border: none;
     background-color: transparent;
+}
+
+.card-text {
+    height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-img-top {
+    aspect-ratio: 300 / 475;
 }
 
 .image-container {
