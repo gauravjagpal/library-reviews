@@ -48,6 +48,19 @@ body {
     background-color: transparent;
 }
 
+.card-text {
+    height: 100px;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-img-top {
+    aspect-ratio: 300 / 475;
+}
+
 .image-container {
     position: relative;
 }

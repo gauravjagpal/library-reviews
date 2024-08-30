@@ -74,7 +74,7 @@ def review_edit(request, slug, review_id):
             review.book = book
             review.approved = False
             review.save()
-            messages.add_message(request, messages.SUCCESS, 'Review Updated!')
+            messages.add_message(request, messages.SUCCESS, 'Review updated request sent!!')
         else:
             messages.add_message(request, messages.ERROR, 'Error updating review!')
 
