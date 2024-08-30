@@ -1,4 +1,6 @@
 {% extends 'base.html' %} {% block content %}
+{% url 'account_login' as login_url %}
+{% url 'account_signup' as signup_url %}
 {% load static %}
 {% load crispy_forms_tags %}
 
@@ -37,7 +39,7 @@
     <div class="row">
         <div class="col-12">
             <strong class="text-secondary">
-                <i class="far fa-reviews"></i> {{ review_count }}
+                <i class="far fa-reviews"></i>This book currently has {{ review_count }} review(s)
             </strong>
         </div>
         <div class="col-12">
@@ -56,10 +58,7 @@
           {% if not review.approved and review.author == user %}
           faded{% elif not review.approved %} d-none{% endif %}">
                     <p class="font-weight-bold">
-                        {{ review.author }}
-                        <span class="font-weight-normal">
-                            {{ review.created_on }}
-                        </span> wrote:
+                        {{ review.author }} wrote:
                     </p>
                     <div id="review{{ review.id }}">
                         {{ review.body | linebreaks }}
@@ -90,7 +89,7 @@
                     <button id="submitButton" type="submit" class="btn btn-signup btn-lg">Submit</button>
                 </form>
                 {% else %}
-                <p>Log in to leave a review</p>
+                <p><a href="{% url 'account_login' %}">Log in</a> or <a href="{% url 'account_signup' %}">Sign up</a> to leave a review</p>
                 {% endif %}
             </div>
         </div>

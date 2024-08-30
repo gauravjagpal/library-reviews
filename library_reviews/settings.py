@@ -32,7 +32,8 @@ DEBUG = True
 ALLOWED_HOSTS = [
     '8000-gauravjagpa-libraryrevi-cyb4me1gpzz.ws-eu115.gitpod.io',
     'localhost',
-    '.herokuapp.com'
+    '.herokuapp.com',
+    '127.0.0.1'
 ]
 
 
