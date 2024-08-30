@@ -54,6 +54,19 @@ body {
     max-width: 10px;
 }
 
+#book-thumbnail {
+    max-width: 300px;
+    display: block;
+    margin: auto;
+}
+
+.book-details {
+    max-width: 500px;
+    display: block;
+    margin: auto;
+    text-align: center;
+}
+
 .image-flash {
     position: absolute;
     bottom: 5%;
