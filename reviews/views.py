@@ -68,18 +68,6 @@ def book_details(request, slug):
         'review_form': review_form
     })
 
-    return render(
-        request,
-        "reviews/book_details.html",
-        {
-            "book": book,
-            "reviews": reviews,
-            "review_count": review_count,
-            "review_form": review_form,
-        },
-    )
-
-
 def review_edit(request, slug, review_id):
     """
     View to edit reviews

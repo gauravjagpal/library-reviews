@@ -82,6 +82,10 @@ body {
     text-align: center;
 }
 
+.btn-primary {
+    background-color: #091F5B;
+}
+
 .image-flash {
     position: absolute;
     bottom: 5%;
