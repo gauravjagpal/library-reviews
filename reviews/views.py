@@ -66,7 +66,7 @@ def review_edit(request, slug, review_id):
 
         queryset = Book.objects.filter(status=1)
         book = get_object_or_404(queryset, slug=slug)
-        review = get_object_or_404(Reviewed, pk=review_id)
+        review = get_object_or_404(Reviewed, pk=review_id, )
         review_form = ReviewForm(data=request.POST, instance=review)
 
         if review_form.is_valid() and review.author == request.user:
