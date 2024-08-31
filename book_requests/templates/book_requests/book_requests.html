@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-12 col-md-6 my-5">
+        <h2>Give us a book request to add!</h2>
+        <p>Requesting a novel allows you to explore unique 
+            stories and voices that might not be available 
+            locally. It can introduce you to new genres, 
+            perspectives, and authors, enriching your reading 
+            experience and expanding the diversity of narratives 
+            in your library or bookstore. Plus, it supports 
+            the demand for varied literary works, ensuring 
+            that compelling stories continue to reach readers.
+        </p>
+
+        <!-- add your form here. Your submit button should 
+                            have the classes of btn, btn-secondary -->
+        <form method="post" id="form-block">
+            {{ form | crispy }}
+            {% csrf_token %}
+            <button class="btn btn-secondary" type="submit">Submit
+            </button>
+        </form>
+    </div>
+</div>
+{% endblock %}
