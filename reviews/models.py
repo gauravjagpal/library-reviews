@@ -5,6 +5,8 @@ from cloudinary.models import CloudinaryField
 # Create your models here.
 
 STATUS = ((0, "Draft"), (1, "Published"))
+
+
 class Book(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -13,7 +15,7 @@ class Book(models.Model):
     status = models.IntegerField(choices=STATUS, default=0)
     featured_image = CloudinaryField('image', default='placeholder')
     buy_here = models.URLField(max_length=128, blank=False)
-    
+
 
 class Reviewed(models.Model):
     book = models.ForeignKey(

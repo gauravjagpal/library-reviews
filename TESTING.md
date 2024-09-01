@@ -66,11 +66,16 @@ HTML & CSS testing was completed using [W3 Validator](https://validator.w3.org/)
 When validating the code, I had the errors shown below. this was fixed by replacing the id with a class instead.
 ![Duplicate ID error](documentation/testing/duplicate_id.png)
 
+## Python Testing
 
-![HTML Validation - Descendant Error](documentation/testing_documentation/validation/base.html_button_descendant.png)
+Python pep8 validation was done via [Code Institute's Python Linter](https://pep8ci.herokuapp.com/)
 
-Fixed:
+The errors received in the Python testing were the 2 blank linkes after imports and the extra line at the end of all the code.
+There was also the occasional blank space at the end of a line of code and some lines of code were too long.
 
-![HTML Validation Complete- base.html](documentation/testing_documentation/validation/index.html_validation_complete.png)
+Python Files Tested:
 
-
+- models
+- forms
+- views
+- urls

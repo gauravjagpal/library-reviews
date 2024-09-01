@@ -5,6 +5,7 @@ from django.http import HttpResponseRedirect
 from .models import Book, Reviewed
 from .forms import ReviewForm
 
+
 # Create your views here.
 class BookList(generic.ListView):
     model = Book
@@ -38,7 +39,7 @@ def book_details(request, slug):
             review = review_form.save(commit=False)
             review.author = request.user
             review.book = book
-            
+
             # Automatically approve if the user is an admin
             if request.user.is_staff:
                 review.approved = True
@@ -52,9 +53,9 @@ def book_details(request, slug):
                     request, messages.SUCCESS,
                     'Review submitted and awaiting approval'
                 )
-                
+
             review.save()
-            
+
             # Re-fetch all reviews after saving the new one
             reviews = book.reviews.all()
 
@@ -68,6 +69,7 @@ def book_details(request, slug):
         'review_form': review_form
     })
 
+
 def review_edit(request, slug, review_id):
     """
     View to edit reviews
@@ -78,24 +80,28 @@ def review_edit(request, slug, review_id):
         book = get_object_or_404(queryset, slug=slug)
         review = get_object_or_404(Reviewed, pk=review_id)
         review_form = ReviewForm(data=request.POST, instance=review)
-    
+
         if review_form.is_valid() and review.author == request.user:
             review = review_form.save(commit=False)
             review.book = book
-            
+
             # Automatically approve if the user is an admin
             if request.user.is_staff:
                 review.approved = True
-                messages.add_message(request, messages.SUCCESS, 'Review updated and approved!')
+                messages.add_message(request, messages.SUCCESS,
+                                     'Review updated and approved!')
             else:
                 review.approved = False
-                messages.add_message(request, messages.SUCCESS, 'Review updated, approval pending!')
-            
+                messages.add_message(request, messages.SUCCESS,
+                                     'Review updated, approval pending!')
+
             review.save()
         else:
-            messages.add_message(request, messages.ERROR, 'Error updating review!')
+            messages.add_message(request, messages.ERROR,
+                                 'Error updating review!')
 
     return HttpResponseRedirect(reverse('book_details', args=[slug]))
+
 
 def review_delete(request, slug, review_id):
     """
@@ -107,8 +113,10 @@ def review_delete(request, slug, review_id):
 
     if review.author == request.user:
         review.delete()
-        messages.add_message(request, messages.SUCCESS, 'Review deleted!')
+        messages.add_message(request, messages.SUCCESS,
+                             'Review deleted!')
     else:
-        messages.add_message(request, messages.ERROR, 'You can only delete your own review!')
+        messages.add_message(request, messages.ERROR,
+                             'You can only delete your own review!')
 
     return HttpResponseRedirect(reverse('book_details', args=[slug]))
