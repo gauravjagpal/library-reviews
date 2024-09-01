@@ -185,7 +185,7 @@ This project was designed using Agile methodology, utilising the Project Board a
 
 # Testing
 
-TESTING.MD
+- [Testing file](TESTING.md)
 
 
 ## Bugs
