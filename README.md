@@ -75,3 +75,13 @@ The main font used is Sans-Serif
 ## Logo and Favicon
 
 The logo was created using a fonts anf styling
+
+## Wireframes
+
+- Homepage Wireframes
+
+![Homepage Wireframes](documentation/images/wireframes//home-wireframe.png)
+
+- Book View Wireframes
+
+![Mobile Post Detail Wireframe](documentation/wireframes/mobile_post_detail_wireframe.png)

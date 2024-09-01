@@ -209,3 +209,19 @@ body {
 .approval {
     color: rgb(222, 146, 168);
 }
+
+/*-------book request styling------*/
+#form-block {
+    max-width: 75%;
+    display: block;
+    margin: auto;
+}
+
+/*-------media query styling------*/
+@media only screen and (max-width: 600px) {
+    .card-img-top {
+      max-width: 75%;
+      display: block;
+      margin: auto;
+    }
+  }
