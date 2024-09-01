@@ -9,7 +9,7 @@ def request_view(request):
             form.save()
             messages.add_message(
                 request, messages.SUCCESS, 
-                "Collaboration request received! I endeavour to respond within 2 working days.")
+                "Book request received! I will try getting this loaded ASAP!.")
     else:
         form = RequestForm()
     

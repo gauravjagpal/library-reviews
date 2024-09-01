@@ -1,6 +1,6 @@
 # Gaurav's Book Reviews
 
-
+### Am I responsive
 ![Am I responsive](documentation/images/responsive.png)
 
 Portfolio 4 project as part of the Diploma in Full Stack Software Development by Code Institute. This project uses:
@@ -18,11 +18,41 @@ It is a fullstack site that allows users to read reviews, create an account and 
 Link to live site - [https://gauravs-library-app-55206db4974a.herokuapp.com/](https://gauravs-library-app-55206db4974a.herokuapp.com/)
 
 ## CONTENTS
-
-
-
-
-
+- [Gaurav's Book Reviews](#gauravs-book-reviews)
+    - [Am I Responsive](#am-i-responsive)
+  - [CONTENTS](#contents)
+  - [Site Objectives](#site-objectives)
+- [User Experience/UX](#user-experienceux)
+  - [Target Audience](#target-audience)
+  - [User Stories](#user-stories)
+    - [Visitor Goals](#visitor-goals)
+- [Design Choices](#design-choices)
+  - [Colour Scheme](#colour-scheme)
+  - [Typography](#typography)
+  - [Logo and Favicon](#logo-and-favicon)
+  - [Wireframes](#wireframes)
+  - [Flow Diagram](#flow-diagram)
+  - [Database Plan](#database-plan)
+- [Features](#features)
+  - [Registration](#registration)
+  - [Future Features](#future-features)
+- [Technologies Used](#technologies-used)
+- [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
+- [Agile](#agile)
+- [Testing](#testing)
+  - [Bugs](#bugs)
+  - [Lighthouse](#lighthouse)
+  - [Validation Testing](#validation-testing)
+    - [HTML \& CSS](#html--css)
+  - [Python Testing](#python-testing)
+  - [Deployment](#deployment)
+    - [Github Deployment](#github-deployment)
+    - [Cloning and Forking](#cloning-and-forking)
+    - [Repository deployment via Heroku](#repository-deployment-via-heroku)
+    - [Deployment of the app](#deployment-of-the-app)
+  - [Credits](#credits)
+  - [Media](#media)
+  - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
 
 ## Site Objectives
 
@@ -76,6 +106,8 @@ The main font used is sans-serif
 
 The logo was created using fonts and styling
 
+ The favicon was used from font-awesome
+
 ## Wireframes
 
 - Homepage Wireframes
@@ -123,6 +155,8 @@ Request books to be added
 - Add a search bar for users to search on the homepage for a specific book/author
 - Add filters to the homepage to make the site more customisable
 - Add a downloadable ebook link next to the buy now link on the book-details page
+
+# Technologies Used
 
 Here are the technologies used to build this project:
 
@@ -193,10 +227,6 @@ The performance scores appear to be low, and this is due to the cookies and imag
 #### Desktop
 
 ![Lighthouse Desktop Book Requests Score](documentation/lighthouse/desktop_book_request.png)
-
-
-
-
 
 
 ## Deployment
@@ -283,6 +313,6 @@ ___
 
 ## Acknowledgments and Thanks
 
-Sean & Oisin at Code Institute's tutor support for the help and guidance with my code-related brain melts.
+Sean & Oisin at Code Institute's tutor support for the help and guidance with my code-related issues.
 
-Rebecca at Code Institute's tutor support for the database reset guidance.
+Rebecca at Code Institute's tutor support for the database reset guidance on deadline day.
