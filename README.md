@@ -155,6 +155,7 @@ Request books to be added
 - Add a search bar for users to search on the homepage for a specific book/author
 - Add filters to the homepage to make the site more customisable
 - Add a downloadable ebook link next to the buy now link on the book-details page
+- Social media icons currently there as "dead icons". Purely there for visual. In future as the site expands these will become active.
 
 # Technologies Used
 
