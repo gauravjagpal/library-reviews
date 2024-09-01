@@ -69,7 +69,7 @@ body {
     max-width: 10px;
 }
 
-#book-thumbnail {
+.book-thumbnail {
     max-width: 300px;
     display: block;
     margin: auto;

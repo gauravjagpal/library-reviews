@@ -16,7 +16,7 @@
                     <div class="card mb-4">
                         <div class="card-body">
                             <a href="{% url 'book_details' book.slug %}" class="book-link">
-                                <div class="image-container" id="book-thumbnail">
+                                <div class="image-container book-thumbnail">
                                     {% if "placeholder" in book.featured_image.url %}
                                     <img class="card-img-top" src="{% static 'images/default.jpg' %}"
                                         alt="placeholder image">
