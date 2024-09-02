@@ -1,9 +1,13 @@
+# Testing File
+
 ## CONTENTS
+  - [Manual Testing](#manual-testing)
   - [Bugs](#bugs)
   - [Lighthouse](#lighthouse)
   - [Validation Testing](#validation-testing)
     - [HTML \& CSS](#html--css)
-  - [Python Testing](#python-testing)
+    -   [Python Testing](#python-testing)
+    -   [JavaScript Testing](#javascript)
 
 
 ## Manual Testing
@@ -79,3 +83,12 @@ Python Files Tested:
 - forms
 - views
 - urls
+
+### JavaScript
+
+JavaScript testing was completed using [JSHint](https://jshint.com/)
+
+When validating the code, I had the errors shown below. These errors are accepted errors.
+
+![JSHint Errors](documentation/testing/JSHint%20Testing.png)
+

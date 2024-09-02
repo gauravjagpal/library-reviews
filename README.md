@@ -40,14 +40,14 @@ Link to live site - [https://gauravs-library-app-55206db4974a.herokuapp.com/](ht
 - [Programming Languages, Frameworks and Libraries Used](#programming-languages-frameworks-and-libraries-used)
 - [Agile](#agile)
 - [Testing](#testing)
-  - [Deployment](#deployment)
-    - [Github Deployment](#github-deployment)
-    - [Cloning and Forking](#cloning-and-forking)
-    - [Repository deployment via Heroku](#repository-deployment-via-heroku)
-    - [Deployment of the app](#deployment-of-the-app)
-  - [Credits](#credits)
-  - [Media](#media)
-  - [Acknowledgments and Thanks](#acknowledgments-and-thanks)
+- [Deployment](#deployment)
+  - [Github Deployment](#github-deployment)
+  - [Cloning and Forking](#cloning-and-forking)
+  - [Repository deployment via Heroku](#repository-deployment-via-heroku)
+  - [Deployment of the app](#deployment-of-the-app)
+- [Credits](#credits)
+- [Media](#media)
+- [Acknowledgments and Thanks](#acknowledgments-and-thanks)
 
 ## Site Objectives
 
@@ -182,9 +182,9 @@ This project was designed using Agile methodology, utilising the Project Board a
 
 - [Testing file](TESTING.md)
 
-## Deployment
+# Deployment
 
-### Github Deployment
+## Github Deployment
 
 The website was stored using GitHub for storage of data and version control. To do this I did the following;
 
