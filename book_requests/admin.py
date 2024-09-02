@@ -3,6 +3,7 @@ from .models import Request
 from django_summernote.admin import SummernoteModelAdmin
 
 
+# Customises how CollaborareRequest looks in the admin interface
 @admin.register(Request)
 class CollaborateRequestAdmin(admin.ModelAdmin):
 

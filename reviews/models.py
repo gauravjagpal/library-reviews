@@ -2,11 +2,12 @@ from django.db import models
 from django.contrib.auth.models import User
 from cloudinary.models import CloudinaryField
 
-# Create your models here.
 
 STATUS = ((0, "Draft"), (1, "Published"))
 
 
+# Model designed to represent a book with essential information
+# Such as title, author, a blurb, a URL to buy the book
 class Book(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -17,6 +18,8 @@ class Book(models.Model):
     buy_here = models.URLField(max_length=128, blank=False)
 
 
+# Model designed to store and manange reviews of books
+# Each review is linked to a specific book with an approval status
 class Reviewed(models.Model):
     book = models.ForeignKey(
         Book, on_delete=models.CASCADE, related_name="reviews")

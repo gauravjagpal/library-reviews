@@ -40,14 +40,15 @@ def book_details(request, slug):
             review.author = request.user
             review.book = book
 
-            # Automatically approve if the user is an admin
             if request.user.is_staff:
+                # Automatically approved if the user is an admin
                 review.approved = True
                 messages.add_message(
                     request, messages.SUCCESS,
                     'Review submitted and approved!'
                 )
             else:
+                # Review goes to admin to approve if the user is not staff
                 review.approved = False
                 messages.add_message(
                     request, messages.SUCCESS,
@@ -60,7 +61,6 @@ def book_details(request, slug):
             reviews = book.reviews.all()
 
     review_form = ReviewForm()
-    # Add additional context if needed and render the template
 
     return render(request, 'reviews/book_details.html', {
         'book': book,
@@ -85,12 +85,13 @@ def review_edit(request, slug, review_id):
             review = review_form.save(commit=False)
             review.book = book
 
-            # Automatically approve if the user is an admin
+            # Automatically approved if the user is an admin
             if request.user.is_staff:
                 review.approved = True
                 messages.add_message(request, messages.SUCCESS,
                                      'Review updated and approved!')
             else:
+                # Edited review goes to admin to approve if user is not staff
                 review.approved = False
                 messages.add_message(request, messages.SUCCESS,
                                      'Review updated, approval pending!')
@@ -111,6 +112,7 @@ def review_delete(request, slug, review_id):
     book = get_object_or_404(queryset, slug=slug)
     review = get_object_or_404(Reviewed, pk=review_id)
 
+# If user is the author they can delete their own review
     if review.author == request.user:
         review.delete()
         messages.add_message(request, messages.SUCCESS,

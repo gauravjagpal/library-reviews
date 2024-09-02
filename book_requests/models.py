@@ -1,6 +1,7 @@
 from django.db import models
 
 
+# This model captures and stores user book requests
 class Request(models.Model):
     name = models.CharField(max_length=100)
     email = models.EmailField()
